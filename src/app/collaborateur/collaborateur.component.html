@@ -1,0 +1,56 @@
+
+
+<p-fieldset legend="Consultation GRH">
+<div class="collabaffich">
+  <div class="affichinf">
+    <button pButton type="button" icon="pi pi-plus" label="Nouveau Collaborateur" [routerLink]="['/ajout']" routerLinkActive="router-link-active"></button>
+
+  <div class="infsalaire">
+    <div class="massesal">
+      <h4>Masse Salariale </h4>
+      <h3>{{ totalSalaireBrut }}</h3>
+    </div>
+    <div class="salmoy">
+      <h4>Salaire Moyen</h4>
+      <h3>5478.6</h3>
+    </div>
+    <div class="pyrage">
+      <h4>Pyramide des Ages</h4>
+      <h3>32.2</h3>
+    </div>
+  </div>
+
+</div>
+<p-table [value]="collaborateurs">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID Collaborateur</th>
+      <th>Nom Complet</th>
+      <th>Poste</th>
+      <th>Type Contrat</th>
+      <th>Ancienneté</th>
+      <th>Actions</th>
+      <!-- Ajoutez d'autres colonnes selon vos besoins -->
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-collaborateur>
+    <tr>
+      <td>{{ collaborateur.id }}</td>
+      <td>{{ collaborateur.nomComplet }}</td>
+      <td>dev</td>
+      <td>CDD</td>
+      <td>xxx</td>
+      <td>
+        <i class="pi pi-eye" style="color: slateblue;font-size: 1.5rem"></i>
+<i class="pi pi-user-edit" style="color: green;font-size: 1.5rem"></i>
+<i class="pi pi-trash" style="color: 'var(--primary-color)';font-size: 1.5rem"></i>
+<i class="pi pi-file-pdf" style="color: #708090;font-size: 1.5rem"></i>
+
+      </td>
+      <!-- Ajoutez d'autres colonnes selon vos besoins -->
+    </tr>
+  </ng-template>
+</p-table>
+</div>
+
+</p-fieldset>

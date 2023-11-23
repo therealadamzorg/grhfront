@@ -1,0 +1,59 @@
+.collabaffich{
+}
+
+.massesal{
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
+.salmoy{
+  display: flex;
+  justify-content: space-between;
+}
+
+.pyrage{
+  display: flex;
+  justify-content: space-between;
+}
+
+.affichinf{
+  display: flex;
+  justify-content: space-between;
+}
+.container{
+  width: 50%;
+  height: 50;
+}
+.infsalaire {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Adjust the gap as needed */
+}
+
+.massesal,
+.salmoy,
+.pyrage {
+  padding: 15px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+/* Optional: Add some styling to the headings and numbers */
+h3, h4, h2 {
+  margin: 0;
+  color: #333;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}

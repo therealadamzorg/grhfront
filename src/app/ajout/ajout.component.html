@@ -1,0 +1,154 @@
+<div class="col-12">
+  <div class="card">
+    <p-fieldset legend="Informations collaborateur">
+    <h5>Informations collaborateur</h5>
+    <div class="p-fluid p-formgrid grid">
+      <div class="field col-12 md:col-6">
+        <label htmlFor="firstname2">Nom Complet</label>
+        <input pInputText id="firstname2" type="text" required/>
+      </div>
+      <div class="field col-12 md:col-6">
+        <label htmlFor="lastname2">CIN</label>
+        <p-inputNumber inputId="integeronly" [(ngModel)]="cin" [min]="10000000" [max]="99999999" > </p-inputNumber>
+      </div>
+      <div class="field col-12">
+        <label htmlFor="address">N° Sécurité Sociale</label>
+        <p-inputNumber inputId="integeronly" [(ngModel)]="nss"> </p-inputNumber>
+      </div>
+      <div class="field col-12 md:col-6">
+        <label htmlFor="city">N° Compte</label>
+        <p-inputNumber inputId="integeronly" [(ngModel)]="nc"> </p-inputNumber>
+      </div>
+      <div class="field col-12 md:col-6">
+        <label htmlFor="city">N° Téléphone</label>
+        <p-inputNumber inputId="integeronly" [(ngModel)]="tel"> </p-inputNumber>
+      </div>
+      <div class="field col-12 md:col-6">
+        <label htmlFor="city">Email</label>
+        <input pInputText type="email" [(ngModel)]="email" id="city" type="text" />
+      </div>
+      <div class="field col-12 md:col-6">
+        <label htmlFor="city" [(ngModel)]="adresse">Adresse</label>
+        <input pInputText id="city" type="text" />
+      </div>
+
+
+
+      <h5>Date de naissance</h5>
+			<p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+
+    </div>
+  </p-fieldset>
+  </div>
+
+  <div class="card">
+  <p-fieldset legend="Qualifications" class="cont" >
+    <div class="field col-12 md:col-3">
+      <label htmlFor="state">Nature d'étude   </label>
+      <p-dropdown [options]="dropdownItems" optionLabel="name" [(ngModel)]="natureEt">choisir</p-dropdown>
+    </div>
+    <div class="field col-12 md:col-3">
+      <label htmlFor="state">Niveau d'étude   </label>
+      <p-dropdown [options]="dropdownItems" optionLabel="name" [(ngModel)]="niveauEt">choisir</p-dropdown>
+    </div>
+    <div class="field col-12 md:col-6">
+      <label htmlFor="city">Années d'Experience   </label>
+      <p-inputNumber inputId="integeronly" [(ngModel)]="exp"> </p-inputNumber>
+     </div>
+     <div class="field col-12 md:col-6">
+      <label htmlFor="firstname2">Certification</label>
+      <input pInputText id="firstname2" type="text" [(ngModel)]="certification" />
+    </div>
+  </p-fieldset>
+</div>
+<div class="card">
+  <p-fieldset legend="Contrat" class="cont" >
+    <div class="field col-12 md:col-3">
+      <label htmlFor="state">Type Contrat  </label>
+      <p-dropdown [options]="dropdownItems" optionLabel="name" [(ngModel)]="selectedState">choisir</p-dropdown>
+    </div>
+    <div class="field col-12 md:col-3">
+      <label htmlFor="state">Avantage sur salaire   </label>
+      <p-dropdown [options]="dropdownItems" optionLabel="name" [(ngModel)]="selectedState">choisir</p-dropdown>
+    </div>
+    <div class="field col-12 md:col-6">
+      <label htmlFor="city">Salaire de base  </label>
+      <p-inputNumber inputId="integeronly" [(ngModel)]="salaireDeBase"> </p-inputNumber>
+     </div>
+
+
+
+     <h5>Date début contrat</h5>
+			<p-calendar [showIcon]="true" inputId="icon" [(ngModel)]="dateDebCont"></p-calendar>
+      <h5>Date fin contrat</h5>
+			<p-calendar [showIcon]="true" inputId="icon" [(ngModel)]="dateFinCont"></p-calendar>
+  </p-fieldset>
+</div>
+<div class="card">
+<p-fieldset legend="Grade" class="cont" >
+  <div class="field col-12 md:col-3">
+    <label htmlFor="state">Département  </label>
+    <p-dropdown [options]="dropdownItems" optionLabel="name" [(ngModel)]="departement">choisir</p-dropdown>
+  </div>
+  <div class="field col-12 md:col-3">
+    <label htmlFor="state">Responsable  </label>
+    <p-dropdown [options]="dropdownItems" optionLabel="name" [(ngModel)]="responsable">choisir</p-dropdown>
+  </div>
+  <div class="field col-12 md:col-3">
+    <label htmlFor="state">Poste   </label>
+    <p-dropdown [options]="dropdownItems" optionLabel="name" [(ngModel)]="poste">choisir</p-dropdown>
+  </div>
+</p-fieldset>
+  </div>
+  <div class="card">
+  <p-fieldset legend="Piéces jointes" class="cont" >
+
+    <p-fileUpload mode="basic" chooseLabel="Choisir un fichier "    ></p-fileUpload>
+<p-table [value]="pieces" styleClass="p-datatable-striped" [tableStyle]="{'min-width': '50rem'}">
+  <ng-template pTemplate="header">
+      <tr>
+
+          <th>Documents</th>
+          <th>Obligatoire</th>
+          <th>Statut</th>
+
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+      <tr>
+
+          <td>{{product.document}}</td>
+          <td>{{product.obligatoire}}</td>
+          <td>
+            <p-checkbox [binary]="true" inputId="binary"></p-checkbox></td>
+
+      </tr>
+  </ng-template>
+</p-table>
+  </p-fieldset>
+</div>
+<div class="card">
+  <p-fieldset legend="Autre informations" class="cont" >
+    <div class="flex align-items-center">
+      <p-checkbox [binary]="true" ></p-checkbox>
+      <label for="ingredient1" class="ml-2" [(ngModel)]="recommendation" >Recommendation</label>
+  </div>
+  <div class="field col-12 md:col-6">
+    <label htmlFor="col">Collaborateur</label>
+    <input pInputText id="col" type="text" [(ngModel)]="collaborateur"/>
+    <div class="area">
+    <label htmlFor="commentaire" [(ngModel)]="commentaire">commentaire</label>
+    <textarea  rows="5" cols="30" pInputTextarea class="area" ></textarea></div>
+  </div>
+  </p-fieldset>
+
+
+</div>
+<div class="btn">
+
+<p-button label="Initialiser" severity="secondary" class="btninit" ></p-button>
+<p-button label="Enregistrer"></p-button>
+</div>
+  </div>
+
+
