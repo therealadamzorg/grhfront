@@ -15,13 +15,16 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { TableModule } from 'primeng/table';
 import { AjoutComponent } from './ajout/ajout.component';
 import { DropdownModule } from 'primeng/dropdown'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FileUploadModule } from 'primeng/fileupload';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { CommonModule } from '@angular/common';
+
+
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     InputTextareaModule,
     InputNumberModule,
     FileUploadModule,
-    RadioButtonModule
+    RadioButtonModule,
+    ReactiveFormsModule,
+    CommonModule,
+
 
 
   ],
